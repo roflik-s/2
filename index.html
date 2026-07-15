@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cup Escape: Curse of the Pyramid</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+      <div id="hud" class="hud">
+        <div>Health: <span id="health-value">100</span></div>
+        <div>Score: <span id="score-value">0</span></div>
+        <div>Cups: <span id="cups-value">0</span></div>
+        <div>Time: <span id="timer-value">0.0</span></div>
+      </div>
+      <div id="overlay" class="overlay active">
+        <div id="menu-screen" class="screen visible">
+          <h1>Cup Escape</h1>
+          <h2>Curse of the Pyramid</h2>
+          <p>Explore the maze, collect the cups, and escape the tomb.</p>
+          <div class="buttons">
+            <button data-action="new-game">New Game</button>
+            <button data-action="continue">Continue</button>
+            <button data-action="settings">Settings</button>
+            <button data-action="exit">Exit</button>
+          </div>
+        </div>
+
+        <div id="settings-screen" class="screen">
+          <h2>Settings</h2>
+          <label>Difficulty
+            <select id="difficulty-select">
+              <option value="easy">Easy</option>
+              <option value="normal" selected>Normal</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <label>Volume <input id="volume-range" type="range" min="0" max="100" value="80" /></label>
+          <button data-action="back-menu">Back</button>
+          <button id="fullscreen-btn">Fullscreen</button>
+        </div>
+
+        <div id="gameover-screen" class="screen">
+          <h2>Game Over</h2>
+          <p id="gameover-summary"></p>
+          <button data-action="restart">Restart</button>
+          <button data-action="back-menu">Main Menu</button>
+        </div>
+
+        <div id="victory-screen" class="screen">
+          <h2>Victory</h2>
+          <p id="victory-summary"></p>
+          <button data-action="restart">Play Again</button>
+          <button data-action="back-menu">Main Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/game.js"></script>
+  </body>
+</html>
